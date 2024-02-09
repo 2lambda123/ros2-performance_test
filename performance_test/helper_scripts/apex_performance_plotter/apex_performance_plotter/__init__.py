@@ -52,8 +52,7 @@ def load_template():
         variable_start_string=r'\var{',
         variable_end_string='}',
         trim_blocks=True,
-        autoescape=False,
-        loader=jinja2.FileSystemLoader(os.path.abspath(os.path.dirname(__file__)))
+        autoescape=True, loader=jinja2.FileSystemLoader(os.path.abspath(os.path.dirname(__file__)))
     )
     latex_jinja_env.filters.update({
         'sanitize': sanitize,
